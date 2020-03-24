@@ -1,5 +1,5 @@
 # Plingo
-Hangedman Alternative Word Guessing Game
+Hangedman Alternative Word Guessing Game https://s-ankone.github.io/Plingo/
 
 Plingo is a 6-letter-word guessing game, limited to Dutch Words with a P (to reduce the scope of the assignment).
 Some 'branding' indicates the game may evolve into 'Swingo', by adding more features to it. For now the
