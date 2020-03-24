@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<!-- Comments in this document are to clarify what to change in this template, and what not to -->
+
+<html>
+<head>
+	<title>Swingo - Guess the word</title> <!-- Text in the Browser TAB -->
+	<meta name="description" content="A word guessing game"/> <!-- Description of this site -->
+	<meta name="keywords" content="Guess, Words, Game, Play, Win, Spelling"/>	<!-- Keywords associated with the content of this site -->
+
+	<meta lang="Eng"/> <!-- language on the page -->
+	<meta charset="UTF-8"/> <!-- base type of characters -->
+	
+	<meta name="robots" content="noindex nofollow"/> <!-- Sets desired behavior or Spiders/Crawlers -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Sets default behavior based on viewport/device -->
+	<link rel="stylesheet" type="text/css" href="./css/default_style.css"/> <!-- link to CSS file for BASE/DEFAULT styling --> 
+	<link rel="stylesheet" type="text/css" href="./css/text_style.css"/> <!-- link to CSS file for all TEXT styling --> 
+	<link rel="stylesheet" type="text/css" href="./css/index_style.css"/> <!-- link to CSS file for PAGE Specific styling, change per page --> 
+	<link rel="stylesheet" type="text/css" href="./css/game_style.css"/> <!-- link to CSS file for GAME Specific styling --> 
+	<link rel="stylesheet" type="text/css" href="./css/media_style.css"/> <!-- link to CSS file for @media control and changes -->	
+	
+</head>
+<body>
+	<div class="top_container fixed"> <!-- Container for the top section of the site, generally for navigation -->
+
+		<nav> <!-- The actual navigation bar/container for the nav options -->
+			<div id="brand">
+				<div id="brand_btn" class="semi_btn"><a class="nav_link" href="#top"><h3>Swingo</h3></a></div>
+			</div>
+			<div id="ham_menu">								<!-- Hamburger Icon goes here -->
+				<div id="ham" class="semi_btn">
+					<div class="ham_burger"></div>			
+					<div class="ham_burger"></div>
+					<div class="ham_burger"></div>
+				</div>
+			</div>	
+			<div id="nav_links">
+				<div id="play_btn" class="semi_btn"><a class="play_nav" href="#swingo">Play</a></div>
+				<div class="semi_btn"><a class="nav_link" href="#">About</a></div>
+				<div class="semi_btn"><a class="nav_link" href="#">Contact</a></div>
+			</div>	
+			<div id="login">
+				<div id="login_btn" class="semi_btn"><a class="nav_link" href="#">Log in</a></div>
+			</div>
+		</nav>
+	</div>
+
+<!-- topTag -->	
+<div id="top" class="tag"></div>	
+
+	<div class="main_container"> <!-- Container for the main-content -->
+		<section class="jumbotron">   <!-- might be REMOVE(D) for other pages -->
+			<h1>Play Swingo</h1>
+			<p>The word guessing game</p>
+		</section>
+		<main> 	
+			<section>
+				<article id="instructions">
+					<h2>Quick Instructions</h2>
+					<p>Guess the 6 letter word <strong>starting with a Swing</strong> 
+					by swinging the wheel, to get the starting letter.<br/>
+					Then start guessing the word.<br/>
+					<strong><em>Go ahead and get started</em></strong> and score
+					for every good letter or the word bonus<br/>
+					<strong><em>bank and win!</em></strong></p>
+					<cite>//** Aanpassen van de winconditie !</cite>
+				</article>
+			</section>
+		<hr/>	
+			<h2>Swingo</h2>
+	<div id="swingo" class="tag"></div>				
+			<p> !!! Add in a wheel of fortune to determine starting letter</p>
+			<p> !!! Add in the BallenBak </b>
+			
+			<div id="game_container">
+				<section id="game_grid">
+					<section class="letter6_grid">
+					<!-- first row of letters, form one word -->
+					<div class="eerste letter row1"></div>
+					<div class="letter row1"></div>
+					<div class="letter row1"></div>
+					<div class="letter row1"></div>
+					<div class="letter row1"></div>
+					<div class="letter row1"></div>
+					
+					<!-- second row of letters, form one word -->
+					<div class="eerste letter row2"></div>
+					<div class="letter row2"></div>
+					<div class="letter row2"></div>
+					<div class="letter row2"></div>
+					<div class="letter row2"></div>
+					<div class="letter row2"></div>
+
+					<!-- thrid row of letters, form one word -->
+					<div class="eerste letter row3"></div>
+					<div class="letter row3"></div>
+					<div class="letter row3"></div>
+					<div class="letter row3"></div>
+					<div class="letter row3"></div>
+					<div class="letter row3"></div>
+
+					<!-- forth row of letters, form one word -->
+					<div class="eerste letter row4"></div>
+					<div class="letter row4"></div>
+					<div class="letter row4"></div>
+					<div class="letter row4"></div>	
+					<div class="letter row4"></div>
+					<div class="letter row4"></div>	
+					
+					<!-- fifth row of letters, form one word -->
+					<div class="eerste letter row5"></div>
+					<div class="letter row5"></div>
+					<div class="letter row5"></div>
+					<div class="letter row5"></div>
+					<div class="letter row5"></div>
+					<div class="letter row5"></div>				
+					</section>	
+				</section>
+				<section id="user">
+					<div id="user_feedback">
+						<p>Type your guess below</p>
+					</div>
+					<div id="input_line">
+						<input type="text" id="input" name="userInput" autofocus required />
+						<button id="jsSendInput">Send</button>
+					</div>
+				</section>
+			</div>
+		<hr/>	
+			<section class="cards_section">
+				<article class="card">
+					<h3>Player 1</h3>
+					<p>Name:</p>
+					<p>Score:</p>					
+					<img class="article_img" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
+					<p>with some text going here, maybe even a link?</p>
+					<a class="inline" href="#" target="_blank">some link</a>
+				</article>
+				<article class="card">
+					<h3>Player 2</h3>
+					<p>Name:</p>
+					<p>Score:</p>
+					<img class="article_img" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
+					<p>with some text going here, maybe even a link?</p>
+					<a class="inline" href="#" target="_blank">some link</a>
+				</article>
+				<article class="card">
+					<h3>Player 3</h3>
+					<p>Name:</p>
+					<p>Score:</p>
+					<img class="article_img" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
+					<p>with some text going here, maybe even a link?</p>
+					<a class="inline" href="#" target="_blank">some link</a>
+				</article>	
+			</section>
+		<hr/>
+
+		</main>
+	<div id="bottom" class="tag"></div>	
+		<footer>
+			<div class="semi_btn"><a class="nav_link" alt="nav_button2top" href="#top">totop</a></div>
+			<address>
+				<p>your feet go here</p>
+			</address>
+		</footer>
+	</div>			
+	<div class="bottom_container fixed"> <!-- Container for a 'fixed' general 'footer' -->
+		- Swingo Inc. - copyrights &copy; 2020 - <a title="no cookies, no spying" href="#">Privacy Statement</a> - <a title="free to use" href="#">Terms of Use</a> -</p>
+	</div>
+
+	<script type="text/javascript" src="./jscript/swingo_database.js"></script>	
+	<script type="text/javascript" src="./jscript/plingo_setup.js"></script>	
+	<script type="text/javascript" src="./jscript/plingo_viewController.js"></script>
+	<script type="text/javascript" src="./jscript/plingo_gameController.js"></script>	
+</body>
+</html>

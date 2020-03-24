@@ -1,0 +1,64 @@
+
+
+/* Styling for INDIVIDUAL pages, currently set to style the landing/index page */
+/* - Save this as index_style.css, and make other thispage_style.css files to -*/
+/* -- add and/or remove specific styling elements for specific 'other' pages --*/
+/* IF you use the same element style more often, move it to the default style -*/
+
+/* !NOTE! once you save this file under another name change the link in html !!*/
+
+section.jumbotron{
+	background-color: #ffcc99;
+	width: 100%;
+	text-align: center;
+	padding: 6rem;
+	}
+
+article{
+	width: 100%;
+	}
+
+article#instructions{
+	background-color: #ffffcc;
+	border: 1px dashed #ff9900;
+	}
+
+div#game_container{
+	/* SEE game_style.css for styling */
+	}
+	
+section.cards_section{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 5px; 
+	}
+
+article.card{
+	width: 30%;
+	min-width: 200px;
+	max-width: 350px;
+	display: inline-block;
+	flex-grow: 1;
+	text-align: center;
+	padding: 1rem;
+	border: 1px solid #CCCCCC;
+	margin: 3rem 0.5rem;
+	}
+
+img.article_img{
+	width: 100%;
+	margin: 0.5rem 0;
+	}	
+
+	
+
+
+
+
+
+
+
+

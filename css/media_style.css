@@ -1,0 +1,52 @@
+
+
+/* eXtraLarge screen changes 1280px and above*/
+@media only screen and (min-width: 1280px){
+	
+nav{
+	width: 56%;
+	}
+
+main{
+	width: 56%;	
+	}
+
+footer{
+	width: 56%;
+	}
+	
+}
+
+
+/*  Large screen changes and above */
+@media only screen and (min-width: 1024px){
+	section.jumbotron{
+		background-color: #ccffcc; /*light green*/
+	}
+
+}
+
+
+/* Medium screen changes and BELOW - Tablet & Old Monitors*/
+@media only screen and (max-width: 800px){
+	section.jumbotron{
+		background-color: #ccffff; /*light blue*/
+	}
+
+	div#ham_menu{
+		display: block;
+	}
+	
+	div#nav_links{
+		display: none;
+	}
+}
+
+
+/* Small screen changes and BELOW - Mobile */
+@media only screen and (max-width: 640px){
+	section.jumbotron{
+		background-color: #ccccff; /*light purple*/
+	}
+	
+}

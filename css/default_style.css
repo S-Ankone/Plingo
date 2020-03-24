@@ -1,0 +1,166 @@
+
+
+/* All defaults for the main skeleton of the site AND some basic elements used through-out */
+/* ----- Style individual pages that differ from these defaults in the page_style.css ---- */
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	}
+
+body{
+	background-color: #e6e6e6;
+	}
+
+.fixed{
+	position: fixed;
+	z-index:2;	
+	}
+
+div.top_container {
+	top: 0px;
+	width: 100%;
+	height: 5rem;
+	background-color: #6699ff;
+	}
+
+nav{
+	width: 70%;
+	height: 100%;	
+	margin: auto;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	display: flex;	
+	}
+
+div#brand{
+	width: 20%;
+	min-width: 125px;
+	text-align: left;
+	}
+
+div#nav_links{
+	width: 50%;
+	min-width: 125px;
+	margin: auto;
+	flex-direction: row;
+	flex-wrap: nowrap;	
+	display: flex;	
+	}
+
+div#login{
+	width: 20%;
+	min-width: 75px;
+	margin: auto;
+	}
+	
+div.semi_btn {
+	height: 5rem;
+	min-width: 50px;
+	padding: 0.75rem;
+	margin: 0.01rem;
+	background-color: #6699ff;
+	cursor: pointer;
+	border: 2px solid #6699ff;
+	display: flex;
+	}
+	
+div.semi_btn:hover{
+	border: 2px solid;
+	background-color: #6699ff;
+	border-top-color: #e6e6e6;
+	border-left-color: #e6e6e6;
+	border-right-color: #999;
+	border-bottom-color: #999;
+	border-radius: 3px;
+	display: flex;
+	}
+
+div#play_btn:hover{
+	background-color: #009900;
+	}
+
+div#brand_btn{
+	width: 100px;
+	}	
+
+div#login_btn{
+	width: 75px;
+	margin-left: auto;
+	}
+
+div#ham_menu{
+	width: 50%;
+	display: none;
+	margin: auto;
+	}
+
+div#ham{
+	width: 50px;
+	flex-wrap: wrap;	
+	display: flex;
+	margin-left: auto;
+}
+
+div.ham_burger{
+	width: 4rem;
+	height: 0.3rem;
+	margin: 0.3rem 0;
+	border: 2px solid #000000;
+	border-radius: 4px;
+	padding: 0;
+	}
+
+/**** END OF THE TOP SECTION OF THE WEBSITE ****/
+
+
+
+div.main_container{
+	position: relative;
+	top: 5.25rem;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	}
+	
+main{
+	width: 70%;
+	margin: 0px auto;
+	}
+	
+section{
+	width: 100%;
+	}
+	
+
+/**** END OF THE MAIN SECTION OF THE WEBSITE ****/
+
+
+
+footer {
+	width: 70%;
+	margin: 2rem auto;
+	background-color: #b3b3b3;
+	opacity: 90%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: space-between;
+	}
+	
+address{
+	margin-bottom: 3rem;
+	}	
+
+/* end of the actual scrolling content of the site */
+
+div.bottom_container {
+	bottom: 0px;
+	width: 100%;
+	background-color: #6699ff;	
+	height: 2.5rem;
+	padding: 0.35rem;
+	text-align: center;
+	}
