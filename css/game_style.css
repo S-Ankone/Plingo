@@ -23,17 +23,23 @@ section#user{
 	width: 300px;
 	padding-top: 15px;
 	display: block;
-	text-align: center;
+	text-align: center;		
 	}
 
 div#user_feedback{
 	width: 300px;
 	height: 150px;
-	padding: 50px;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+
 border: 1px solid black;
 	}	
-
-
+	
+p#feedback{
+	display: inline-block;
+	}
 
 
 div#input_line{
@@ -93,4 +99,15 @@ div.error{
 	background-color: #000;
 }
 
+div.winner{
+	background-color: #ccffcc;
+	}
+
+div.warning{
+	background-color: #ffff66;
+	}
+
+p.warning{
+	color: red;
+}
 	

@@ -58,7 +58,6 @@ div#login{
 div.semi_btn {
 	height: 5rem;
 	min-width: 50px;
-	padding: 0.75rem;
 	margin: 0.01rem;
 	background-color: #6699ff;
 	cursor: pointer;
@@ -69,16 +68,21 @@ div.semi_btn {
 div.semi_btn:hover{
 	border: 2px solid;
 	background-color: #6699ff;
-	border-top-color: #e6e6e6;
+	border-top-color: #f2f2f2;
 	border-left-color: #e6e6e6;
-	border-right-color: #999;
-	border-bottom-color: #999;
+	border-right-color: #808080;
+	border-bottom-color: #666666;
 	border-radius: 3px;
 	display: flex;
 	}
 
 div#play_btn:hover{
 	background-color: #009900;
+	}
+
+div#about_btn:hover{
+	background-color: #ffff66;
+	color: #ff9900;
 	}
 
 div#brand_btn{
@@ -92,7 +96,7 @@ div#login_btn{
 
 div#ham_menu{
 	width: 50%;
-	display: none;
+	display: none;  /* Hides the Hamburger Menu, showing happens in media_style.css */
 	margin: auto;
 	}
 
@@ -134,8 +138,16 @@ section{
 	}
 	
 
-/**** END OF THE MAIN SECTION OF THE WEBSITE ****/
+div#to_top{
+	width: 50px;
+	position: sticky;
+	bottom: 30px;
+	margin-left: auto;
+	border-radius: 25px 25px;
+	z-index: 2;
+	}
 
+/**** END OF THE MAIN SECTION OF THE WEBSITE ****/
 
 
 footer {

@@ -24,20 +24,17 @@ h3{
 	padding: 0.2rem;
 	}
 
-.nav_btn{
+
+p{
 	font-size: 1.5rem;
+	line-height: 2rem;
+	margin: 0px 10px 15px 20px;
 	}
 
 p.display{
 	font-size: 1.5rem;
 	padding: 1rem;
 	margin: auto;
-	}
-
-p{
-	font-size: 1.5rem;
-	line-height: 2rem;
-	margin: 0px 10px 15px 20px;
 	}
 
 p.white{
@@ -53,6 +50,7 @@ em{
 	font-style: italic;
 	}
 
+
 a.inline:link{
 	font-size: 1.5rem; 
 	text-decoration: none;}
@@ -63,32 +61,23 @@ a.inline:active{ text-decoration: none;}
 	
 a.nav_link:link{
 	font-size: 1.5rem;
-	padding: 0.2rem;
+	padding: 1rem;
 	margin: auto;
 	text-decoration: none;
-	}	
+	display: block;	}
 a.nav_link:hover{ text-decoration: none; }
 a.nav_link:visited{ text-decoration: none; }
 a.nav_link:active{ text-decoration: none; }
 	
-
-a.play_nav:link{ 
-	font-size: 1.5rem;
-	font-weight: bold;
-	padding: 0.2rem;
-	margin: auto;
-	text-decoration: none;
-	}
-a.play_nav:hover { color: #FFFFFF; text-decoration: none; }
-a.play_nav:visited{ text-decoration: none; }
-a.play_nav:active{ text-decoration: none; }
+a#play_nav:link{ font-weight: bold;}
+a#play_nav:hover { color: #FFFFFF; }
+a#about_nav:hover{ color: #ff9900; }
 
 	
 a:link{
 	font-size: ;
 	text-decoration: none;}	
-a:hover{
-	text-decoration: underline; }
-a:visited{	text-decoration: none; }
-a:active{	text-decoration: none; }
+a:hover{ text-decoration: underline; }
+a:visited{ text-decoration: none; }
+a:active{ text-decoration: none; }
 
