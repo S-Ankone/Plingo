@@ -26,7 +26,7 @@
 
 		<nav> <!-- The actual navigation bar/container for the nav options -->
 			<div id="brand">
-				<div id="brand_btn" class="semi_btn"><a class="nav_link" href="#top"><h3>Swingo</h3></a></div>
+				<div id="brand_btn" class="semi_btn"><a class="nav_link" href="#"><h3>Swingo</h3></a></div>
 			</div>
 			<div id="ham_menu">								<!-- Hamburger Icon goes here -->
 				<div id="ham" class="semi_btn">
@@ -36,8 +36,8 @@
 				</div>
 			</div>	
 			<div id="nav_links">
-				<div id="play_btn" class="semi_btn"><a class="play_nav" href="#swingo">Play</a></div>
-				<div class="semi_btn"><a class="nav_link" href="#">About</a></div>
+				<div id="play_btn" class="semi_btn"><a id="play_nav" class="nav_link" href="#swingo">Play</a></div>
+				<div id="about_btn" class="semi_btn"><a id="about_nav" class="nav_link" href="#">About</a></div>
 				<div class="semi_btn"><a class="nav_link" href="#">Contact</a></div>
 			</div>	
 			<div id="login">
@@ -56,23 +56,18 @@
 		</section>
 		<main> 	
 			<section>
-				<article id="instructions">
+				<article id="instructions" class="hide">
 					<h2>Quick Instructions</h2>
-					<p>Guess the 6 letter word <strong>starting with a Swing</strong> 
-					by swinging the wheel, to get the starting letter.<br/>
-					Then start guessing the word.<br/>
-					<strong><em>Go ahead and get started</em></strong> and score
-					for every good letter or the word bonus<br/>
-					<strong><em>bank and win!</em></strong></p>
+					<p>Guess the <em>Dutch</em> 6 letter word starting with a P.
+					<strong><em>   Guess correct and win!</em></strong></p>
+					<p><strong>Green letters</strong> are correct; <strong>Yellow letters</strong> are at least in the word;
+					Blue letters are not in the word.</p>
 					<cite>//** Aanpassen van de winconditie !</cite>
 				</article>
 			</section>
 		<hr/>	
-			<h2>Swingo</h2>
 	<div id="swingo" class="tag"></div>				
-			<p> !!! Add in a wheel of fortune to determine starting letter</p>
-			<p> !!! Add in the BallenBak </b>
-			
+
 			<div id="game_container">
 				<section id="game_grid">
 					<section class="letter6_grid">
@@ -119,7 +114,7 @@
 				</section>
 				<section id="user">
 					<div id="user_feedback">
-						<p>Type your guess below</p>
+						<p id="feedback">Type your guess below</p>
 					</div>
 					<div id="input_line">
 						<input type="text" id="input" name="userInput" autofocus required />
@@ -154,12 +149,12 @@
 					<a class="inline" href="#" target="_blank">some link</a>
 				</article>	
 			</section>
-		<hr/>
-
+		<hr/>			
+	<div id="to_top" class="semi_btn"><a class="nav_link" alt="nav_button2top" href="#top">Top</a></div>	
 		</main>
+	
 	<div id="bottom" class="tag"></div>	
 		<footer>
-			<div class="semi_btn"><a class="nav_link" alt="nav_button2top" href="#top">totop</a></div>
 			<address>
 				<p>your feet go here</p>
 			</address>

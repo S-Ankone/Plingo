@@ -17,13 +17,19 @@ function getInput(){
 	if (check === false){
 		return;
 	} else {
-		turn++;
-		evaluateWords(toGuess, userGuess);
-		if (checkWin() === false){
-			return;
+		if (turn < 5){
+			turn++;
+			evaluateWords(toGuess, userGuess);
+			setUserFeedback("clear");
+			if (checkWin() === false){
+				return;
+			} else {
+				return; 
+			}
 		} else {
-			return; // (** DEV: PLAY AGAIN ?!? )
-		};
+			setUserFeedback("lost"); // (** DEV: PLAY AGAIN ?!? )
+			return;
+		}
 	}
 }
 
@@ -36,22 +42,30 @@ function wordToGuess (){
 	toGuess = woordMetP[i];  // Sets a word from the database to 'toGuess'
 }
 
+
+
 // Checks if the word is an excisting word and of the correct length.
-function checkGuess(x){
-	if (x.length < amountOfLetters || x.length > amountOfLetters){
-			alert("The given word is not a " + amountOfLetters + " letter word");
+function checkGuess(theGuess){
+	if (theGuess == ""){
+			setUserFeedback("noLetters");
+		check = false;
+	} else if (theGuess.length < amountOfLetters || theGuess.length > amountOfLetters){
+			console.log("The given word is not a " + amountOfLetters + " letter word");
+			setUserFeedback("amountLetters");
 			resetInput(); // is visual, see viewController.js
 		check = false;
-	} else if (woordMetP.indexOf(x) === -1){
-			alert("The given word is not an existing " + amountOfLetters + " letter word starting with a " + startingLetter);
+	} else if (woordMetP.indexOf(theGuess) === -1){
+			console.log("The given word is not an existing word starting with a " + beginLetter);
+			setUserFeedback("existingWord");		
 			resetInput(); // is visual, see viewController.js
 		check = false;
 	} else {
+		setUserFeedback("processing");
 		check = true;
 	}
 }
 
-
+let letter
 
 // Evaluates the VALID userGuess vs the word toGuess for correct letters in the correct place, 
 // or correct letters in the wrong place, and whether the word is correct;
@@ -59,27 +73,35 @@ function evaluateWords(toGuess, userGuess){
 
 	displayResult = ""; // (** DEV console.log)
 	
-	for (let letter = 0; letter < amountOfLetters; letter++) {
+	for ( letter = 0; letter < amountOfLetters; letter++) {
 
-		if (toGuess[letter] === userGuess[letter]){  // If the letter is correct and in the right location
-			setVisual(turn.toString(), letter, userGuess[letter].toString(), "correct");
-			displayResult += (toGuess[letter] + " "); // (** DEV console.log)
-		} else if (toGuess.indexOf(userGuess[letter]) !== -1){ // If the letter is in the word (** DEV: NEEDS another check for doubles!)
-			setVisual(turn.toString(), letter, userGuess[letter].toString(), "almost");
-			displayResult += " *" + userGuess[letter] + "* "; // (** DEV console.log)
-		} else {
-			setVisual(turn.toString(), letter, userGuess[letter].toString(), "wrong");
-			displayResult += " _ ";  // (**DEV console.log)
-		}
+		setTimeout(doStuff, 1000*(letter+1), letter, toGuess, userGuess);
 	}
-	console.log(displayResult);
+	setUserFeedback("processing");
+	console.log("processing");
 	resetInput(); // is visual, see viewController.js	
 }
+
+function doStuff(letter, toGuess, userGuess){
+		if (toGuess[letter] === userGuess[letter]){  // If the letter is correct and in the right location
+			setVisual(turn.toString(), letter, userGuess[letter].toString(), "correct"); // is visual, see viewController.js
+			displayResult += (toGuess[letter] + " "); // (** DEV console.log)
+		} else if (toGuess.indexOf(userGuess[letter]) !== -1){ // If the letter is in the word (** DEV: NEEDS another check for doubles!)
+			setVisual(turn.toString(), letter, userGuess[letter].toString(), "almost"); // is visual, see viewController.js
+			displayResult += " *" + userGuess[letter] + "* "; // (** DEV console.log)
+		} else {
+			setVisual(turn.toString(), letter, userGuess[letter].toString(), "wrong"); // is visual, see viewController.js
+			displayResult += " _ ";  // (**DEV console.log)
+		}
+	console.log(displayResult);
+}
+
 
 
 function checkWin(){
 		if (userGuess === toGuess){
-			alert("SCORE, you guessed correctly");
+			setUserFeedback("winner");
+			console.log("SCORE, you guessed correctly");
 		} else {
 			return false;
 		}

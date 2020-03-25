@@ -8,7 +8,7 @@
 /* !NOTE! once you save this file under another name change the link in html !!*/
 
 section.jumbotron{
-	background-color: #ffcc99;
+	background-color: #ffffcc;
 	width: 100%;
 	text-align: center;
 	padding: 6rem;
@@ -16,25 +16,6 @@ section.jumbotron{
 
 article{
 	width: 100%;
-	}
-
-article#instructions{
-	background-color: #ffffcc;
-	border: 1px dashed #ff9900;
-	}
-
-article.hide{
-	display: none;
-	}
-	
-article.show{
-	display: block;
-	}
-
-div#game_container{
-	/* SEE game_style.css for styling */
-	margin-top: 50px;
-	margin-bottom: 25px;
 	}
 	
 section.cards_section{
@@ -63,6 +44,13 @@ img.article_img{
 	margin: 0.5rem 0;
 	}	
 
+
+
+img.gallery_img{
+	width: 100%;
+	height: 100%;
+	opacity: 50%;
+	}
 	
 
 
