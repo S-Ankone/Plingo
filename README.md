@@ -8,4 +8,4 @@ Some 'branding' indicates the game may evolve into 'Swingo', by adding more feat
 Unfortunately the basic jscript has been lost during development, but remnants can be found in the console.log
 output (also a great place to look for non Dutch natives). 
 
-The innitial commit still has some alerts build in and not all features work, working on it...
+*!* no longer any annoying pop-ups (prompt nor alert)... yay to patch.v1
