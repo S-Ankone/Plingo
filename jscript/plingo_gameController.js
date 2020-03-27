@@ -5,36 +5,50 @@ console.log("from gameController.js");
 // ********************************* //
 
 
-sendWord.addEventListener("click", getInput); // add eventlistener to the button (** DEV: not yet sure where to put this )
+sendInput.addEventListener("click", getInput); // *** CYCLES MAIN GAME LOGIC *** //
 wordToGuess(); // pick the word to guess
-console.log(toGuess); // (** DEV: log the picked word to console)
 console.log(displayResult); // UI, empty string with locations for letters (** DEV: html array of div's)
 
 function getInput(){
-   	userGuess = input.value; // Set the userGuess to the input from user
-	console.log(userGuess); // (** DEV: log the input word to console)
-	checkGuess(userGuess); // check if the word is 6 letters, and if so, if it's an existing word in de database
-	if (check === false){
-		return;
+
+  console.log(toGuess); // (** DEV: log the picked word to console)	
+  userGuess = input.value; // Set the userGuess to the input from user
+  console.log(userGuess); // (** DEV: log the input word to console)
+	
+  if (checkGuess(userGuess) === false){   // check if the word is 6 letters, and if so, if it's an existing word in de database
+	return;
+  } else {
+	if (turn < amountOfTurns){
+  	   turn++;
+	   evaluateWords(toGuess, userGuess);
+	   if(checkWin() === true){
+	     setTimeout(function(){ askForReplay(); }, visualTimer*(amountOfLetters-1));}
+    } else if (turn === amountOfTurns){
+	   turn++;			
+	   evaluateWords(toGuess, userGuess);
+	   if (checkWin() === false){
+		 setTimeout(function(){ setUserFeedback("lost"); }, visualTimer*(amountOfLetters-1)); // (** DEV: PLAY AGAIN ?!? )
+		 setTimeout(function(){ askForReplay(); }, visualTimer*(amountOfLetters-1));	
+	   } else {
+		 setTimeout(function(){ askForReplay(); }, visualTimer*(amountOfLetters-1));	
+	     return;}
 	} else {
-		if (turn < 5){
-			turn++;
-			evaluateWords(toGuess, userGuess);
-			setUserFeedback("clear");
-			if (checkWin() === false){
-				return;
-			} else {
-				return; 
-			}
-		} else {
-			setUserFeedback("lost"); // (** DEV: PLAY AGAIN ?!? )
-			return;
-		}
+	   setTimeout(function(){ askForReplay(); }, visualTimer*(amountOfLetters-1));		
+	   setUserFeedback("error");
+	   return;
 	}
+  }	
+}	
+
+function keepScore (){
+	score = score + points;
+	showScore();
 }
 
+// ********************************** //
+// -- ALL THE FUNCTIONS ARE BELOW --  //
+// ********************************** //
 
-//*-- ALL THE FUNCTIONS ARE BELOW -- *//
 
 // Word picker
 function wordToGuess (){
@@ -42,70 +56,104 @@ function wordToGuess (){
 	toGuess = woordMetP[i];  // Sets a word from the database to 'toGuess'
 }
 
-
-
 // Checks if the word is an excisting word and of the correct length.
 function checkGuess(theGuess){
 	if (theGuess == ""){
 			setUserFeedback("noLetters");
-		check = false;
+		return false;
 	} else if (theGuess.length < amountOfLetters || theGuess.length > amountOfLetters){
 			console.log("The given word is not a " + amountOfLetters + " letter word");
 			setUserFeedback("amountLetters");
-			resetInput(); // is visual, see viewController.js
-		check = false;
+			resetInput(); 
+		return false;
 	} else if (woordMetP.indexOf(theGuess) === -1){
-			console.log("The given word is not an existing word starting with a " + beginLetter);
+			console.log("The given word is not an existing " + localisation + " word starting with a " + startingLetter);
 			setUserFeedback("existingWord");		
-			resetInput(); // is visual, see viewController.js
-		check = false;
+			resetInput(); 
+		return false;
 	} else {
-		setUserFeedback("processing");
-		check = true;
+		return true;
 	}
 }
 
-let letter
+// Checks if the input word matches the selected word
+function checkWin(){
+	console.log("checkWIN");
+	setTimeout(function(){ setUserFeedback("clear"); }, visualTimer*(amountOfLetters-1));	
+	if (userGuess === toGuess){
+		setTimeout(function(){ setUserFeedback("winner"); }, visualTimer*(amountOfLetters-1));
+		setTimeout(function(){ keepScore(); }, visualTimer*(amountOfLetters-1));
+		console.log("SCORE, you guessed correctly");
+		return true;
+	} else {
+		return false;
+	}
+}
 
 // Evaluates the VALID userGuess vs the word toGuess for correct letters in the correct place, 
 // or correct letters in the wrong place, and whether the word is correct;
 function evaluateWords(toGuess, userGuess){
 
-	displayResult = ""; // (** DEV console.log)
-	
-	for ( letter = 0; letter < amountOfLetters; letter++) {
-
-		setTimeout(doStuff, 1000*(letter+1), letter, toGuess, userGuess);
+	displayResult = ""; // (** for DEV console.log)
+	for (let letter = 0; letter < amountOfLetters; letter++) {
+		doResult(letter, toGuess, userGuess);
+		setTimeout(doVisual, visualTimer*(letter), letter, toGuess, userGuess);		
 	}
+	setTimeout(function(){ resetInput(); }, visualTimer*(amountOfLetters-3)); 
+	doLog();
+}
+
+// Sets the visual feedback letters for the user
+function doVisual(letter, toGuess, userGuess){
 	setUserFeedback("processing");
-	console.log("processing");
-	resetInput(); // is visual, see viewController.js	
+	if (toGuess[letter] === userGuess[letter]){  // If the letter is correct and in the right location
+		setVisual(turn.toString(), letter, userGuess[letter].toString(), "correct"); // is visual, see viewController.js
+	} else if (toGuess.indexOf(userGuess[letter]) !== -1){ // If the letter is in the word (** DEV: NEEDS another check for doubles!)
+		setVisual(turn.toString(), letter, userGuess[letter].toString(), "almost"); // is visual, see viewController.js
+	} else {
+		setVisual(turn.toString(), letter, userGuess[letter].toString(), "wrong"); // is visual, see viewController.js
+	}
 }
 
-function doStuff(letter, toGuess, userGuess){
-		if (toGuess[letter] === userGuess[letter]){  // If the letter is correct and in the right location
-			setVisual(turn.toString(), letter, userGuess[letter].toString(), "correct"); // is visual, see viewController.js
-			displayResult += (toGuess[letter] + " "); // (** DEV console.log)
-		} else if (toGuess.indexOf(userGuess[letter]) !== -1){ // If the letter is in the word (** DEV: NEEDS another check for doubles!)
-			setVisual(turn.toString(), letter, userGuess[letter].toString(), "almost"); // is visual, see viewController.js
-			displayResult += " *" + userGuess[letter] + "* "; // (** DEV console.log)
-		} else {
-			setVisual(turn.toString(), letter, userGuess[letter].toString(), "wrong"); // is visual, see viewController.js
-			displayResult += " _ ";  // (**DEV console.log)
-		}
-	console.log(displayResult);
+// At any end state for the game, lets the player restart the game
+function askForReplay(){
+	let again = document.getElementById("inputBtnTxt");
+	sendInput.removeEventListener("click", getInput); 
+	sendInput.addEventListener("click", gameReset);
+	again.innerHTML = "Again?";	
+	console.log("asked to replay");
+}
+
+// Resets the game without a refresh
+function gameReset(){
+	console.log("starting game reset");
+	let send = document.getElementById("inputBtnTxt");
+	sendInput.removeEventListener("click", gameReset);
+	sendInput.addEventListener("click", getInput); // add new eventlistener to the input button (** DEV: not yet sure where to put this )
+	send.innerHTML = "Send";
+	buildBoard(); // in context: rebuilds the board
+	wordToGuess(); // in context: picks a new word to guess
+	setUserFeedback("clear");
+	resetInput();
+	turn = 0;
 }
 
 
-
-function checkWin(){
-		if (userGuess === toGuess){
-			setUserFeedback("winner");
-			console.log("SCORE, you guessed correctly");
-		} else {
-			return false;
-		}
+// ONLY FOR THE CONSOLE, displays the correct/almost/false letters in the console
+function doResult(letter, toGuess, userGuess){   //(** building up the result string: solely for DEV console.log, )
+	if (toGuess[letter] === userGuess[letter]){  // If the letter is correct and in the right location
+		displayResult += (userGuess[letter] + " "); 
+	} else if (toGuess.indexOf(userGuess[letter]) !== -1){ // If the letter is in the word (** DEV: NEEDS another check for doubles!)
+		displayResult += " *" + userGuess[letter] + "* "; 
+	} else {
+		displayResult += " _ ";  
+	}
 }
+// ONLY FOR THE CONSOLE, displays the build-up result string in the console
+function doLog(){
+	console.log(displayResult);	
+}
+
 
 
 
