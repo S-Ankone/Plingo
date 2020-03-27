@@ -4,18 +4,9 @@ console.log("from viewController.js");
 // SEE SETUP FILE FOR VARIABLES INIT //
 // ********************************* //
 
-	let theScore;
-	theScore = document.getElementsByClassName("playerScore");
 
 // Shows the player's score
 showScore();
-
-function showScore(){
-	console.log(score);
-	for (i = 0; i < theScore.length; i++){
-		theScore[i].innerHTML = score.toString();
-	}
-}
 
 // MINOR Animations for the Send button
 sendInput.addEventListener("mouseover", animBtnOver);
@@ -46,6 +37,7 @@ function animBtnUp(){
 // -- ALL THE FUNCTIONS ARE BELOW --  //
 // ********************************** //
 
+
 // resets the text input to empty
 function resetInput(){
 	input.value = "";
@@ -68,12 +60,17 @@ function setVisual(turn, index, theLetter, toType){
 		default:
 			guess[index].classList.add("error");
 	}
-
 }
 
-
-	
-
+// sets/updates the score on the website
+function showScore(){
+	let theScore;
+	theScore = document.getElementsByClassName("playerScore");
+	console.log(score);
+	for (i = 0; i < theScore.length; i++){
+		theScore[i].innerHTML = score.toString();
+	}
+}
 
 // gives various feedback to the user based on the game state
 function setUserFeedback(toType){
@@ -128,8 +125,3 @@ function setUserFeedback(toType){
 			showFeedback.innerHTML = "Something went wrong, start a bug report?";
 	}
 }
-
-
-
-
-
