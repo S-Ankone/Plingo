@@ -5,7 +5,7 @@ Plingo is a 6-letter-word guessing game, limited to Dutch Words with a P (to red
 Some 'branding' indicates the game may evolve into 'Swingo', by adding more features to it. For now the
 'working name' is Plingo though.
 
-Unfortunately the basic jscript has been lost during development, but remnants can be found in the console.log
-output (also a great place to look for non Dutch natives). 
+**As of patch-v2 the game is stable, playable and presentable; development is halted but might continue in the future.
 
-*!* no longer any annoying pop-ups (prompt nor alert)... yay to patch.v1
+*Unfortunately the basic jscript has been lost during development, but remnants can be found in the console.log
+output (also a great place to look for non Dutch natives). 
