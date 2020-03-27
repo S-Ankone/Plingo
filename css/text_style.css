@@ -41,6 +41,10 @@ p.white{
 	color: #FFFFFF;
 	}	
 
+p#sendInput{
+	/* SEE game_style.css */
+	}
+
 strong{
 	font-size: 1.5rem;
 }

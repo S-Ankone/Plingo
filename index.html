@@ -20,6 +20,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/game_style.css"/> <!-- link to CSS file for GAME Specific styling --> 
 	<link rel="stylesheet" type="text/css" href="./css/media_style.css"/> <!-- link to CSS file for @media control and changes -->	
 	
+	<script defer type="text/javascript" src="./jscript/website_viewCtrl.js"></script> 
 </head>
 <body>
 	<div class="top_container fixed"> <!-- Container for the top section of the site, generally for navigation -->
@@ -72,7 +73,7 @@
 				<section id="game_grid">
 					<section class="letter6_grid">
 					<!-- first row of letters, form one word -->
-					<div class="eerste letter row1"></div>
+					<div class="first letter row1"></div>
 					<div class="letter row1"></div>
 					<div class="letter row1"></div>
 					<div class="letter row1"></div>
@@ -80,7 +81,7 @@
 					<div class="letter row1"></div>
 					
 					<!-- second row of letters, form one word -->
-					<div class="eerste letter row2"></div>
+					<div class="first letter row2"></div>
 					<div class="letter row2"></div>
 					<div class="letter row2"></div>
 					<div class="letter row2"></div>
@@ -88,7 +89,7 @@
 					<div class="letter row2"></div>
 
 					<!-- thrid row of letters, form one word -->
-					<div class="eerste letter row3"></div>
+					<div class="first letter row3"></div>
 					<div class="letter row3"></div>
 					<div class="letter row3"></div>
 					<div class="letter row3"></div>
@@ -96,7 +97,7 @@
 					<div class="letter row3"></div>
 
 					<!-- forth row of letters, form one word -->
-					<div class="eerste letter row4"></div>
+					<div class="first letter row4"></div>
 					<div class="letter row4"></div>
 					<div class="letter row4"></div>
 					<div class="letter row4"></div>	
@@ -104,7 +105,7 @@
 					<div class="letter row4"></div>	
 					
 					<!-- fifth row of letters, form one word -->
-					<div class="eerste letter row5"></div>
+					<div class="first letter row5"></div>
 					<div class="letter row5"></div>
 					<div class="letter row5"></div>
 					<div class="letter row5"></div>
@@ -117,8 +118,11 @@
 						<p id="feedback">Type your guess below</p>
 					</div>
 					<div id="input_line">
-						<input type="text" id="input" name="userInput" autofocus required />
-						<button id="jsSendInput">Send</button>
+						<input type="text" id="input" name="userInput" autofocus />
+						<div id="jsSendInput"><p id="inputBtnTxt" class="white">Send</p></div>
+					</div>
+					<div id="user_Score">
+						<p class="score">Your score: <span class="playerScore">"<span></p>
 					</div>
 				</section>
 			</div>
@@ -127,7 +131,7 @@
 				<article class="card">
 					<h3>Player 1</h3>
 					<p>Name:</p>
-					<p>Score:</p>					
+					<p class="score">Score: <span class="playerScore">"<span></p>
 					<img class="article_img" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
 					<p>with some text going here, maybe even a link?</p>
 					<a class="inline" href="#" target="_blank">some link</a>

@@ -1,9 +1,18 @@
+
+
+
+/* for styling on the outside of this container, see index_style.css */
 div#game_container{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
 	}	
+
+
+/* ********************** */
+/* -- BELOW: Game Side -- */
+/* ********************** */
 
 section#game_grid{
 	width: 335px;
@@ -17,53 +26,6 @@ section.letter6_grid{
 	grid-gap: 1px;
 	justify-content: center;
 	}
-
-	
-section#user{
-	width: 300px;
-	padding-top: 15px;
-	display: block;
-	text-align: center;		
-	}
-
-div#user_feedback{
-	width: 300px;
-	height: 150px;
-	padding: 10px;
-	justify-content: center;
-	align-items: center;
-	display: flex;
-
-border: 1px solid black;
-	}	
-	
-p#feedback{
-	display: inline-block;
-	}
-
-
-div#input_line{
-	margin: 10px;
-border: 1px dashed red;
-	}
-
-	
-input[type=text] {
-	font-size: 3rem;
-	width: 175px;
-	text-align: center;
-	margin: auto;
-	}
-
-button#jsSendInput{
-	width: 75px;
-	height: 4rem;
-	margin: auto;
-	background-color: #009900;
-	font-size: 1.5rem;
-	color: white;
-	cursor: pointer;	
-	} 
 
 div.letter{
 	width: 50px;
@@ -81,7 +43,7 @@ div.letter{
 	padding: 0.5rem;
 	text-align: center;
 	}
-	
+
 div.correct{
 	background-color: #009900;
 	}
@@ -91,6 +53,91 @@ div.almost{
 	color: #ff9900;
 	}
 	
+	
+/* *********************** */
+/* -- BELOW:  User Side -- */
+/* *********************** */
+	
+section#user{
+	width: 300px;
+	padding-top: 15px;
+	display: block;
+	text-align: center;		
+	}
+
+div#user_feedback{
+	width: 300px;
+	height: 150px;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	border: 1px solid black;
+	}	
+
+p#feedback{
+	/* text style inside the feedback window */
+	}
+
+div#input_line{
+	margin: 7px;
+	padding: 5px;
+	display: flex;
+	flex-direction: row;
+	}
+	
+input[type=text] {
+	font-size: 2rem;
+	width: 175px;
+	height: 4rem;
+	padding: 0.2rem;
+	text-align: center;
+	margin: auto;
+	}
+
+div#jsSendInput{
+	width: 75px;
+	height: 4rem;
+	margin: 0.01rem;
+	background-color: #009900;
+	cursor: pointer;
+	display: flex;
+	} 
+
+p#inputBtnTxt{
+	margin: auto;
+	padding: 0.5rem;
+	}
+
+.overBorders{
+	border: 2px solid;	
+	border-top-color: #f2f2f2;
+	border-left-color: #e6e6e6;
+	border-right-color: #808080;
+	border-bottom-color: #666666;
+	}
+
+.onClicking{
+	border: 2px solid;	
+	border-top-color: #666666;
+	border-left-color: #808080;
+	border-right-color: #e6e6e6;
+	border-bottom-color: #f2f2f2;
+}
+
+div#user_score{
+	width: 200px;
+}
+
+p.score{
+	font-weight: bold;
+}
+
+p span{
+	font-size: 1.5rem;
+}
+
+/* BELOW:  INPUT CHANGES to feedbackWindow */		
 div.wrong{
 	background-color: #6699ff;
 	}
@@ -103,11 +150,13 @@ div.winner{
 	background-color: #ccffcc;
 	}
 
+p.warning{
+	color: red;
+}
+
 div.warning{
 	background-color: #ffff66;
 	}
 
-p.warning{
-	color: red;
-}
+
 	

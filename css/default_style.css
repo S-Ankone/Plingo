@@ -60,20 +60,19 @@ div.semi_btn {
 	min-width: 50px;
 	margin: 0.01rem;
 	background-color: #6699ff;
-	cursor: pointer;
 	border: 2px solid #6699ff;
+	cursor: pointer;
 	display: flex;
 	}
 	
 div.semi_btn:hover{
-	border: 2px solid;
-	background-color: #6699ff;
+	border-width: 2px; 
+	border-style: solid;
 	border-top-color: #f2f2f2;
 	border-left-color: #e6e6e6;
 	border-right-color: #808080;
 	border-bottom-color: #666666;
 	border-radius: 3px;
-	display: flex;
 	}
 
 div#play_btn:hover{
@@ -101,24 +100,23 @@ div#ham_menu{
 	}
 
 div#ham{
-	width: 50px;
+	width: 4rem;
 	flex-wrap: wrap;	
-	display: flex;
+	padding-top: 0.5rem;
 	margin-left: auto;
 }
 
 div.ham_burger{
 	width: 4rem;
 	height: 0.3rem;
-	margin: 0.3rem 0;
+	margin: 0.05rem auto;
 	border: 2px solid #000000;
 	border-radius: 4px;
-	padding: 0;
+	padding: 0.1rem;
+	display: flex;
 	}
 
 /**** END OF THE TOP SECTION OF THE WEBSITE ****/
-
-
 
 div.main_container{
 	position: relative;
@@ -136,7 +134,6 @@ main{
 section{
 	width: 100%;
 	}
-	
 
 div#to_top{
 	width: 50px;
@@ -166,7 +163,7 @@ address{
 	margin-bottom: 3rem;
 	}	
 
-/* end of the actual scrolling content of the site */
+/* End of the actual scrolling content of the site */
 
 div.bottom_container {
 	bottom: 0px;
