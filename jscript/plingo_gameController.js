@@ -7,9 +7,9 @@ console.log("from gameController.js");
 
 sendInput.addEventListener("click", getInput); // *** CYCLES MAIN GAME LOGIC *** //
 wordToGuess(); // pick the word to guess
-console.log(displayResult); // UI, empty string with locations for letters (** DEV: html array of div's)
+console.log(displayResult); // (** DEV - console UI, empty string with locations for letters)
 
-function getInput(){
+function getInput(){  //*** MAIN GAME LOGIC ***//
 
   console.log(toGuess); // (** DEV: log the picked word to console)	
   userGuess = input.value; // Set the userGuess to the input from user
@@ -27,7 +27,7 @@ function getInput(){
 	   turn++;			
 	   evaluateWords(toGuess, userGuess);
 	   if (checkWin() === false){
-		 setTimeout(function(){ setUserFeedback("lost"); }, visualTimer*(amountOfLetters-1)); // (** DEV: PLAY AGAIN ?!? )
+		 setTimeout(function(){ setUserFeedback("lost"); }, visualTimer*(amountOfLetters-1));
 		 setTimeout(function(){ askForReplay(); }, visualTimer*(amountOfLetters-1));	
 	   } else {
 		 setTimeout(function(){ askForReplay(); }, visualTimer*(amountOfLetters-1));	
@@ -40,10 +40,6 @@ function getInput(){
   }	
 }	
 
-function keepScore (){
-	score = score + points;
-	showScore();
-}
 
 // ********************************** //
 // -- ALL THE FUNCTIONS ARE BELOW --  //
@@ -81,26 +77,31 @@ function checkWin(){
 	console.log("checkWIN");
 	setTimeout(function(){ setUserFeedback("clear"); }, visualTimer*(amountOfLetters-1));	
 	if (userGuess === toGuess){
-		setTimeout(function(){ setUserFeedback("winner"); }, visualTimer*(amountOfLetters-1));
+		setTimeout(function(){ setUserFeedback("winner"); }, visualTimer*(amountOfLetters-1)); 
 		setTimeout(function(){ keepScore(); }, visualTimer*(amountOfLetters-1));
-		console.log("SCORE, you guessed correctly");
+		console.log("SCORE, you guessed correctly"); // (** DEV: logs the outcome if correct )
 		return true;
 	} else {
 		return false;
 	}
 }
 
+// Keeps the score within a playsession
+function keepScore (){
+	score = score + points;
+	showScore();  // is visual, see viewController.js
+}
+
 // Evaluates the VALID userGuess vs the word toGuess for correct letters in the correct place, 
 // or correct letters in the wrong place, and whether the word is correct;
 function evaluateWords(toGuess, userGuess){
-
-	displayResult = ""; // (** for DEV console.log)
+	displayResult = ""; // (** DEV: console.log of the result )
 	for (let letter = 0; letter < amountOfLetters; letter++) {
-		doResult(letter, toGuess, userGuess);
+		doResult(letter, toGuess, userGuess);  // (** DEV: for the console.log of the result ONLY !!)
 		setTimeout(doVisual, visualTimer*(letter), letter, toGuess, userGuess);		
 	}
 	setTimeout(function(){ resetInput(); }, visualTimer*(amountOfLetters-3)); 
-	doLog();
+	doLog(); // (** DEV: logs the final result of the evaluation )
 }
 
 // Sets the visual feedback letters for the user
@@ -121,12 +122,12 @@ function askForReplay(){
 	sendInput.removeEventListener("click", getInput); 
 	sendInput.addEventListener("click", gameReset);
 	again.innerHTML = "Again?";	
-	console.log("asked to replay");
+	console.log("asked to replay"); // (** DEV: confirmation of execution in the log )
 }
 
 // Resets the game without a refresh
 function gameReset(){
-	console.log("starting game reset");
+	console.log("starting game reset"); // (** DEV: confirmation of execution in the log )
 	let send = document.getElementById("inputBtnTxt");
 	sendInput.removeEventListener("click", gameReset);
 	sendInput.addEventListener("click", getInput); // add new eventlistener to the input button (** DEV: not yet sure where to put this )
@@ -137,6 +138,7 @@ function gameReset(){
 	resetInput();
 	turn = 0;
 }
+
 
 
 // ONLY FOR THE CONSOLE, displays the correct/almost/false letters in the console
@@ -153,7 +155,3 @@ function doResult(letter, toGuess, userGuess){   //(** building up the result st
 function doLog(){
 	console.log(displayResult);	
 }
-
-
-
-

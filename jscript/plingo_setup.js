@@ -7,21 +7,21 @@ let input = document.getElementById("input");  // get the input text field/line
 let sendInput = document.getElementById("jsSendInput"); // get the send button
 
 let amountOfLetters = 6; // The amount of letters for this game session (**DEV: hard coded to 6 for Plingo)
-let startingLetter = "P"; // The starting letter for this game session (**DEV: hard coded to "p" for Plingo)
-const amountOfTurns = 4; //*** index starts at 0 ; The amount of turns people get (** DEV: hardcoded to be 5)
-let turn = 0; // the guessing turn, 1st try, 2nd try, etc.
+let startingLetter = "P"; // The starting letter for this game session (**DEV: hard coded to "P" for Plingo)
+const amountOfTurns = 4; //*** Index starts at 0 ; The amount of turns people get (** DEV: hardcoded to be 5)
+let turn = 0; // The guessing turn, 1st try, 2nd try, etc.
 
-let score = 0; // keeping scores
-let points = 100; // points for a correct word
+let score = 0; // Keeping scores
+let points = 100; // Points for a correct word
 
 let toGuess; // The game assigns the picked word to this variable
-let userGuess; // stores the word inputted by the user
+let userGuess; // Stores the word inputted by the user
 
 
 
 // INIT viewCONTROLLER //
 let visualTimer = 865;
-let displayResult = " _ _ _ _ _ _ "; // a variable to display on console.log (**DEV: to be removed upon completion )
+let displayResult = " _ _ _ _ _ _ "; // (**DEV: A variable to display on console.log )
 
 buildBoard();
 

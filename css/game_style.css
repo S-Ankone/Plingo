@@ -1,6 +1,5 @@
 
 
-
 /* for styling on the outside of this container, see index_style.css */
 div#game_container{
 	display: flex;
@@ -157,6 +156,3 @@ p.warning{
 div.warning{
 	background-color: #ffff66;
 	}
-
-
-	
