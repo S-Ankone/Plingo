@@ -4,9 +4,9 @@
 
 <html>
 <head>
-	<title>Swingo - Guess the word</title> <!-- Text in the Browser TAB -->
+	<title>Plingo - Guess the word</title> <!-- Text in the Browser TAB -->
 	<meta name="description" content="A word guessing game"/> <!-- Description of this site -->
-	<meta name="keywords" content="Guess, Words, Game, Play, Win, Spelling"/>	<!-- Keywords associated with the content of this site -->
+	<meta name="keywords" content="Guess, Word, Words, Game, Play, Win, Lingo, Plingo, Spelling"/>	<!-- Keywords associated with the content of this site -->
 
 	<meta lang="Eng"/> <!-- language on the page -->
 	<meta charset="UTF-8"/> <!-- base type of characters -->
@@ -27,7 +27,7 @@
 
 		<nav> <!-- The actual navigation bar/container for the nav options -->
 			<div id="brand">
-				<div id="brand_btn" class="semi_btn"><a class="nav_link" href="#"><h3>Swingo</h3></a></div>
+				<div id="brand_btn" class="semi_btn"><a class="nav_link" href="#"><h3>Plingo</h3></a></div>
 			</div>
 			<div id="ham_menu">								<!-- Hamburger Icon goes here -->
 				<div id="ham" class="semi_btn">
@@ -52,8 +52,36 @@
 
 	<div class="main_container"> <!-- Container for the main-content -->
 		<section class="jumbotron">   <!-- might be REMOVE(D) for other pages -->
-			<h1>Play Swingo</h1>
-			<p>The word guessing game</p>
+			<div class="title">
+				<h1>Play Plingo</h1>
+				<p>The word guessing game</p>
+			</div>
+<!--			<div class="difficulty">
+				<p>Please select your difficulty:</p>
+				<form id="form_diffi" action="/action_page.php">
+ ** DEV insert localisation 
+				  <input type="radio" id="dif_easy" name="difficulty" value="easy">
+				  <label for="male">easy</label><br>
+				  <br>
+				  <input type="radio" id="dif_inter" name="difficulty" value="intermediate">
+				  <label for="female">intermediate</label><br>
+				 <br> 
+				  <input type="radio" id="dif_mod" name="difficulty" value="moderate">
+				  <label for="other">moderate</label><br>
+				  <br>
+				  <input type="radio" id="dif_hard" name="difficulty" value="hard">
+				  <label for="age1">hard</label><br>
+				  <br>
+				  <input type="radio" id="dif_extra" name="difficulty" value="extraHard">
+				  <label for="age2">extra-hard</label><br>  
+				  <br>
+				  <input type="radio" id="dif_rand" name="difficulty" value="random">
+				  <label for="age3">random</label><br>
+				  <br>
+				  <br>
+				  <input type="submit" value="Submit">
+				</form>
+			</div> -->
 		</section>
 		<main> 	
 			<section>
@@ -63,7 +91,7 @@
 					<strong><em>   Guess correct and win!</em></strong></p>
 					<p><strong>Green letters</strong> are correct; <strong>Yellow letters</strong> are at least in the word;
 					Blue letters are not in the word.</p>
-					<cite>//** Aanpassen van de winconditie !</cite>
+					<cite>//** Aanpassen van de winconditie ?!</cite>
 				</article>
 			</section>
 		<hr/>	
@@ -118,40 +146,44 @@
 						<p id="feedback">Type your guess below</p>
 					</div>
 					<div id="input_line">
-						<input type="text" id="input" name="userInput" autofocus />
+						<input type="text" id="input" name="userInput" maxlength="7" autofocus>
 						<div id="jsSendInput"><p id="inputBtnTxt" class="white">Send</p></div>
 					</div>
 					<div id="user_Score">
 						<p class="score">Your score: <span class="playerScore">"<span></p>
 					</div>
 				</section>
+				<section> <!-- ** DEV:  maybe a class? -->
+				<a target="_blank" href="https://www.wikipedia.com">wikipedia link for word? or search with.</a>
+				<section>
 			</div>
 		<hr/>	
-			<section class="cards_section">
-				<article class="card">
+<!-- ** DEV:  <section **hidden** ::  small media AVATARS -->
+			<section class="players_section">
+				<section id="player_1" class="player">
 					<h3>Player 1</h3>
 					<p>Name:</p>
 					<p class="score">Score: <span class="playerScore">"<span></p>
-					<img class="article_img" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
+					<img class="avatar" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
 					<p>with some text going here, maybe even a link?</p>
 					<a class="inline" href="#" target="_blank">some link</a>
-				</article>
-				<article class="card">
+				</section>
+				<section id="player_2" class="player">
 					<h3>Player 2</h3>
 					<p>Name:</p>
 					<p>Score:</p>
-					<img class="article_img" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
+					<img class="avatar" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
 					<p>with some text going here, maybe even a link?</p>
 					<a class="inline" href="#" target="_blank">some link</a>
-				</article>
-				<article class="card">
+				</section>
+				<section id="player_3" class="player">
 					<h3>Player 3</h3>
 					<p>Name:</p>
 					<p>Score:</p>
-					<img class="article_img" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
+					<img class="avatar" src="./img/pattern.jpg" title="trippy" alt="grid pattern"/>
 					<p>with some text going here, maybe even a link?</p>
 					<a class="inline" href="#" target="_blank">some link</a>
-				</article>	
+				</section>	
 			</section>
 		<hr/>			
 	<div id="to_top" class="semi_btn"><a class="nav_link" alt="nav_button2top" href="#top">Top</a></div>	
@@ -165,13 +197,16 @@
 		</footer>
 	</div>			
 	<div class="bottom_container fixed"> <!-- Container for a 'fixed' general 'footer' -->
-		- Swingo Inc. - copyrights &copy; 2020 - <a title="no cookies, no spying" href="#">Privacy Statement</a> - <a title="free to use" href="#">Terms of Use</a> -</p>
+		- Plingo Inc. - copyrights &copy; 2020 - <a title="no cookies, no spying" href="#">Privacy Statement</a> - <a title="free to use" href="#">Terms of Use</a> -</p>
 	</div>
 
 	<!-- All the scripts that run the game -->
-	<script type="text/javascript" src="./jscript/swingo_database.js"></script>	
-	<script type="text/javascript" src="./jscript/plingo_setup.js"></script>	
+	<script type="text/javascript" src="./jscript/plingo_database.js"></script>
+	<!-- <script type="text/javascript" src="./jscript/players_database.js"></script> -->
+	<script type="text/javascript" src="./jscript/plingo_init.js"></script>
+	<!--	<script type="text/javascript" src="./jscript/plingo_playerController.js"></script> -->
 	<script type="text/javascript" src="./jscript/plingo_viewController.js"></script>
-	<script type="text/javascript" src="./jscript/plingo_gameController.js"></script>	
+	<script type="text/javascript" src="./jscript/plingo_gameController.js"></script>
+	<script type="text/javascript" src="./jscript/plingo_scoreController.js"></script>
 </body>
 </html>
