@@ -1,12 +1,11 @@
 console.log("from viewController.js");
 
 // ********************************* //
-// SEE SETUP FILE FOR VARIABLES INIT //
+// SEE INIT FILE FOR VARIABLES INIT //
 // ********************************* //
 
 
-// Shows the player's score
-showScore();
+// Shows the player's score :: showScore();
 
 // MINOR Animations for the Send button
 sendInput.addEventListener("mouseover", animBtnOver);
@@ -66,7 +65,6 @@ function setVisual(turn, index, theLetter, toType){
 function showScore(){
 	let theScore;
 	theScore = document.getElementsByClassName("playerScore");
-	console.log(score);
 	for (i = 0; i < theScore.length; i++){
 		theScore[i].innerHTML = score.toString();
 	}

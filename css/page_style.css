@@ -7,12 +7,58 @@
 
 /* !NOTE! once you save this file under another name change the link in html !!*/
 
+section{
+	
+}
+
 section.jumbotron{
 	background-color: #ffffcc;
 	width: 100%;
 	text-align: center;
 	padding: 6rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 5px; 	
 	}
+
+
+article{
+	min-width: 200px;
+	max-width: 350px;
+	display: inline-block;
+	flex-grow: 1;
+	text-align: center;
+	padding: 1rem;
+	border: 1px solid #CCCCCC;
+	margin: 3rem 0.5rem;
+}
+
+
+div#title{
+	width: 60%;
+	min-width: 200px;
+	max-width: 350px;
+	display: block;
+/*	flex-grow: 1; */
+	text-align: center;
+	padding: 1rem;
+	border: 2px solid red;
+	margin: 0rem;
+}
+
+div#difficulty{
+	width: 40%;
+	min-width: 200px;
+	max-width: 350px;
+	display: block;
+/*	flex-grow: 1; */
+	text-align: center;
+	padding: 1rem;
+	border: 3px solid blue;
+	margin: 0rem;
+}
+
 
 article{
 	width: 100%;
@@ -29,14 +75,6 @@ section.cards_section{
 
 article.card{
 	width: 30%;
-	min-width: 200px;
-	max-width: 350px;
-	display: inline-block;
-	flex-grow: 1;
-	text-align: center;
-	padding: 1rem;
-	border: 1px solid #CCCCCC;
-	margin: 3rem 0.5rem;
 	}
 
 img.article_img{

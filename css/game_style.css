@@ -51,7 +51,10 @@ div.almost{
 	background-color: #ffff66;
 	color: #ff9900;
 	}
-	
+
+div.wrong{
+	background-color: #6699ff;
+	}	
 	
 /* *********************** */
 /* -- BELOW:  User Side -- */
@@ -137,22 +140,20 @@ p span{
 }
 
 /* BELOW:  INPUT CHANGES to feedbackWindow */		
-div.wrong{
-	background-color: #6699ff;
-	}
-	
-div.error{
-	background-color: #000;
-}
+
 
 div.winner{
 	background-color: #ccffcc;
+	}
+
+div.warning{
+	background-color: #ffff66;
 	}
 
 p.warning{
 	color: red;
 }
 
-div.warning{
-	background-color: #ffff66;
-	}
+div.error{
+	background-color: #000;
+}
